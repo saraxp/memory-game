@@ -1,4 +1,4 @@
-import './App.css'
+import './index.css'
 import './components/grid'
 import './components/turns'
 import { useState, useEffect} from 'react';
@@ -42,13 +42,13 @@ function App() {
   
     const timeout1 = setTimeout(() => {
       setShowPattern(selectedPattern);
-    }, 3000);
+    }, 2000);
 
     const timeout2 = setTimeout(() => {
       setShowPattern([]);
       setGameActive(true);
       setUserInput([]);
-    }, 10000);
+    }, 5000);
 
     return () => {
       clearTimeout(timeout1);
@@ -86,7 +86,7 @@ function App() {
     <>
       <Turns onSelect={handleTurnSelection} />
       {gameStarted && currentTurn < numberOfTurns && (
-        <p>Turn {currentTurn + 1} / {numberOfTurns}</p>
+        <p className='font-GoogleSansCode text-white text-xl font-light mb-4'>Turn {currentTurn + 1} / {numberOfTurns}</p>
       )}
       <GridElement highlightedCells={showPattern} gameActive={gameActive}  answerPattern={answerPattern} onUserClick={handleUserClick} userInput={userInput}/>
       {!gameStarted && numberOfTurns && (

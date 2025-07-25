@@ -19,7 +19,7 @@ function Square({value, highlightedCells, gameActive, answerPattern, onUserClick
         console.log("this button was clicked!: " + value);
 
         if (!isCorrect && !alreadyClicked) {
-            setColor('red');
+            setColor('#ff4d4d');
             setTimeout(() => {
                 setColor('');
             }, 500);
@@ -34,14 +34,13 @@ function Square({value, highlightedCells, gameActive, answerPattern, onUserClick
 
     return(
         <button 
-        className={`box ${isHighlighted ? 'highlighted' : ''}`} 
+        className={`flex flex-row flex-wrap rounded-xl w-[6em] h-[6em]  ${isHighlighted ? 'bg-[#a5fd69]' : 'bg-[rgba(168,242,211,0.48)]'}`} 
         style={{
-            backgroundColor: isClickedCorrect ? 'purple' : color,
+            backgroundColor: isClickedCorrect ? '#a5fd69' : color || undefined,
             transition: 'background-color 0.3s ease',
         }} 
         id={value}  
         onClick={handleClick}>
-            {value}
         </button>
     );
 }
@@ -53,26 +52,26 @@ function Square({value, highlightedCells, gameActive, answerPattern, onUserClick
 export default function GridElement({highlightedCells, gameActive, answerPattern, onUserClick, userInput}){
 
     return(
-        <div className='container'>
-            <div className='tile-row'>
+        <div className='flex flex-col gap-2 w-sm h-sm'>
+            <div className='inline-flex flex-row gap-2'>
                 <Square value="1" highlightedCells={highlightedCells} gameActive={gameActive} answerPattern={answerPattern} onUserClick={onUserClick} userInput={userInput} />
                 <Square value="2" highlightedCells={highlightedCells} gameActive={gameActive} answerPattern={answerPattern} onUserClick={onUserClick} userInput={userInput} />
                 <Square value="3" highlightedCells={highlightedCells} gameActive={gameActive} answerPattern={answerPattern} onUserClick={onUserClick} userInput={userInput} />
                 <Square value="4" highlightedCells={highlightedCells} gameActive={gameActive} answerPattern={answerPattern} onUserClick={onUserClick} userInput={userInput} />
             </div>
-            <div className='tile-row'>
+            <div className='inline-flex flex-row gap-2'>
                 <Square value="5" highlightedCells={highlightedCells} gameActive={gameActive} answerPattern={answerPattern} onUserClick={onUserClick} userInput={userInput} />
                 <Square value="6" highlightedCells={highlightedCells} gameActive={gameActive} answerPattern={answerPattern} onUserClick={onUserClick} userInput={userInput} />
                 <Square value="7" highlightedCells={highlightedCells} gameActive={gameActive} answerPattern={answerPattern} onUserClick={onUserClick} userInput={userInput} />
                 <Square value="8" highlightedCells={highlightedCells} gameActive={gameActive} answerPattern={answerPattern} onUserClick={onUserClick} userInput={userInput} />
             </div>
-            <div className='tile-row'>
+            <div className='inline-flex flex-row gap-2'>
                 <Square value="9"  highlightedCells={highlightedCells} gameActive={gameActive} answerPattern={answerPattern} onUserClick={onUserClick} userInput={userInput} />
                 <Square value="10" highlightedCells={highlightedCells} gameActive={gameActive} answerPattern={answerPattern} onUserClick={onUserClick} userInput={userInput} />
                 <Square value="11" highlightedCells={highlightedCells} gameActive={gameActive} answerPattern={answerPattern} onUserClick={onUserClick} userInput={userInput} />
                 <Square value="12" highlightedCells={highlightedCells} gameActive={gameActive} answerPattern={answerPattern} onUserClick={onUserClick} userInput={userInput} />
             </div>
-            <div className='tile-row'>
+            <div className='inline-flex flex-row gap-2'>
                 <Square value="13" highlightedCells={highlightedCells} gameActive={gameActive} answerPattern={answerPattern} onUserClick={onUserClick} userInput={userInput} />
                 <Square value="14" highlightedCells={highlightedCells} gameActive={gameActive} answerPattern={answerPattern} onUserClick={onUserClick} userInput={userInput} />
                 <Square value="15" highlightedCells={highlightedCells} gameActive={gameActive} answerPattern={answerPattern} onUserClick={onUserClick} userInput={userInput} />

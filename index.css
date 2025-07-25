@@ -1,3 +1,21 @@
+@import "tailwindcss";
+
+@font-face{
+  font-family: GoogleSansCode;
+  src: url("./assets/fonts/GoogleSansCode-Regular.ttf")
+}
+
+@theme {
+  --font-GoogleSansCode: GoogleSansCode, "monospace";
+}
+
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
 body {
   margin: 0;
   display: flex;
@@ -5,6 +23,7 @@ body {
   min-width: 320px;
   min-height: 100vh;
   font-family: Arial, sans-serif;
-  background-color: #f5f5f5;
+  background: #070c04;
 }
+
 
